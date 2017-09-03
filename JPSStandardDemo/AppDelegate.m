@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "TabbarController.h"
+#import "JpsViewController.h"
+#import "JpsLoginViewController.h"
+#import "JpsWelcomeViewController.h"
+#import "JpsManagerViewController.h"
+#import "JpsLeftViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +22,54 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //self.window.backgroundColor = [UIColor whiteColor];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeRootVC:) name:@"login" object:nil];
+    
+    //bilibili
+//    JpsViewController *loginVC = [[JpsViewController alloc]init];
+//    self.window.rootViewController = loginVC;
+    
+    //QQ
+//    JpsLoginViewController *loginVC = [[JpsLoginViewController alloc]init];
+//    self.window.rootViewController = loginVC;
+    
+    JpsWelcomeViewController *wecomeVC = [[JpsWelcomeViewController alloc]init];
+    self.window.rootViewController = wecomeVC;
+    
+    
+    
     return YES;
 }
+
+
+
+
+- (void)changeRootVC:(NSNotification *)noti
+{
+//    //1. 初始化窗口根控制器
+//    TabbarController *tabController = [[TabbarController alloc]init];
+//    self.window.rootViewController = tabController;
+//    
+//    //2. 配置navigationBar样式
+//    [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]];
+//    
+//    //3. 配置tabbar样式
+//    [[UITabBar appearance] setTintColor:[UIColor blueColor]];
+//    //设置tabbar背景色
+//    //[[UITabBar appearance] setBarTintColor:[UIColor lightGrayColor]];
+    
+    TabbarController *tabBarVC = [[TabbarController alloc]init];
+    JpsLeftViewController *leftVC = [[JpsLeftViewController alloc]init];
+    
+    JpsManagerViewController *managerVC = [[JpsManagerViewController alloc]initWithLeftVC:leftVC rightVC:tabBarVC];
+    self.window.rootViewController = managerVC;
+    
+}
+
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
