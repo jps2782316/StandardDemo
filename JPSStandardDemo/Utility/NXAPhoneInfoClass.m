@@ -41,6 +41,9 @@
     if ([deviceString isEqualToString:@"iPhone9,1"])    return @"iPhone 7";
     if ([deviceString isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
     
+    //iphone 7 是第9代iphone
+    //iphone9,1   1是iphone的类型
+    
     return deviceString;
 }
 

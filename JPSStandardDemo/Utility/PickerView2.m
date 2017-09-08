@@ -336,9 +336,12 @@
 
 
 #pragma mark - ---------- 设置字体属性 -----------
-//获得属性字体
+
+//获得属性字体 
 - (NSAttributedString *)attributedStringFromString:(NSString *)string
 {
+    //http://blog.csdn.net/vbirdbest/article/details/51798756   //各种属性字体列举
+    
     NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:string];
     //设置个别字体变色
     [attributeStr addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0, 2)];
