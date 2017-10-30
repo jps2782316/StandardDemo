@@ -62,6 +62,28 @@
 
 
 
++ (CGFloat)getHeight
+{
+    CGSize deviceSize = [UIScreen mainScreen].bounds.size;
+    //iPhone X
+    if (deviceSize.width == 375 && deviceSize.height == 812) {
+        return 44 + 44 + 34;   //状态栏  导航栏   底部虚拟区
+    }
+    //其他
+    else{
+        return 64;
+    }
+}
+
+//// 状态栏(statusbar)
+//
+//CGRect StatusRect = [[UIApplication sharedApplication] statusBarFrame];
+//
+////标题栏
+//
+//CGRect NavRect = self.navigationController.navigationBar.frame;
+//然后将高度相加，便可以动态计算顶部高度。
+
 
 
 

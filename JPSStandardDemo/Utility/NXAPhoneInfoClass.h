@@ -23,4 +23,7 @@
 + (NSNumber *)getMarker;
 
 
++ (CGFloat)getHeight;
+
+
 @end
