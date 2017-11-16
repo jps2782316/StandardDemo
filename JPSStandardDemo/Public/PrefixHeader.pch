@@ -27,6 +27,26 @@
 #define DLog(...)
 #endif
 
+/*
+ #ifdef    判断某个宏是否被定义, 若已定义, 执行随后的语句     http://www.jianshu.com/p/ae4ca68b8d63
+ 其中的DEBUG是在Xcode默认的工程中已经定义好的，也可以根据自己的实际情况添加其他常量定义。
+ 在 "Target > Build Settings > Preprocessor Macros > Debug" 里有一个"DEBUG=1"。
+ 当你Run, Test, Analyze时，就属于debug mode，当Profile, Archive时就属于release mode。见你的ios project的"Edit Scheme..."
+ 可以选择Product->Scheme->Edit Scheme，切换debug和release版本
+ http://blog.csdn.net/daiyibo123/article/details/47152259
+ http://blog.csdn.net/totogogo/article/details/8041384
+ */
+
+/*
+ __VA_ARGS__是一个可变参数的宏，很少人知道这个宏，这个可变参数的宏是新的C99规范中新增的，目前似乎只有gcc支（VC6.0的编译器不支持）。
+ #define debug(…) printf(__VA_ARGS__)
+ 缺省号代表一个可以变化的参数表。使用保留名 __VA_ARGS__ 把参数传递给宏。当宏的调用展开时，实际的参数就传递给 printf()了。例如：
+ Debug(“Y = %d\n”, y);
+ 而处理器会把宏的调用替换成：
+ printf(“Y = %d\n”, y);
+ 因为debug()是一个可变参数宏，
+ http://blog.sina.com.cn/s/blog_661314940100qmfg.html
+ */
 
 
 

@@ -30,6 +30,8 @@
     self.passwordField.secureTextEntry = YES;
     
     
+    //测试字典里的汉字打印是否还为 unicode
+    //[self fetchConfigs];
     
 }
 
@@ -91,6 +93,62 @@
     }
 }
 
+
+#pragma mark - ------------- networking -------------
+
+/**
+ 获取城市以及地市服务地址列表(访问中心)(GetDataInfo)
+ */
+- (void)fetchConfigs
+{
+    NetworkingManager *netManager = [NetworkingManager shareManager];
+    
+    NSString *urlString = [@"http://183.60.143.224:9090/service/app/" stringByAppendingString:@"GetDataInfo"];
+    
+    NSDictionary *tempDic = @{@"PlatformType":@"iOS",
+                              @"RoleType":@"S",
+                              @"PhoneMode":@"iPhone"};
+    NSString *jsonStr = [NSDictionary dictionaryToJson:tempDic];
+    NSDictionary *parameDic = @{@"CommandCode":@"GetConfig",
+                                @"TransferData":jsonStr,
+                                @"Marker":@"789069807078"
+                                };
+    NSDictionary *parameDic2 = @{@"entity":parameDic};
+    
+    [netManager postDataWithUrl:urlString parameters:parameDic2 success:^(id json) {
+        DLog(@"获取配置列表...");
+        if ([json[@"ErrorCode"] isEqualToString:@"0"]) {
+            NSArray *array = (NSArray *)[self dictioanryWithJsonString:json[@"ResultInfo"]];
+            NSLog(@"%@", array);
+        }else{
+            if (json[@"ErrorInfo"] != nil) {
+                
+            }
+        }
+        
+    } failure:^(NSError *error) {
+        
+        DLog(@"%@",error.localizedDescription);
+    }];
+}
+
+#pragma mark - ------------- json转字典 -------------
+
+- (NSDictionary *)dictioanryWithJsonString:(NSString *)jsonString
+{
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (error) {
+        DLog(@"解析失败");
+        return nil;
+    }
+    return dic;
+}
 
 
 

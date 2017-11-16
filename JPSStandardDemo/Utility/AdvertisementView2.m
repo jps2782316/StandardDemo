@@ -155,8 +155,8 @@
     if (!_pageControl) {
         _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, self.frame.size.height-40, self.bounds.size.width, 30)];
         _pageControl.currentPage = 0;
-        _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
-        _pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+        _pageControl.pageIndicatorTintColor = [UIColor colorWithRed:254/255.0 green:82/255.0 blue:156/255.0 alpha:1];
+        _pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
         _pageControl.numberOfPages = 3;
         
         [self addSubview:_pageControl];

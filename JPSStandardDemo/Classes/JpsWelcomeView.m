@@ -8,6 +8,7 @@
 
 #import "JpsWelcomeView.h"
 #import "JpsLoginViewController.h"
+#import "JpsViewController.h"
 
 @interface JpsWelcomeView ()
 
@@ -88,8 +89,13 @@
 //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirst"];
 //    [[NSUserDefaults standardUserDefaults] synchronize];
     
+    //QQ登录界面
     JpsLoginViewController *loginVC = [[JpsLoginViewController alloc]init];
     [UIApplication sharedApplication].keyWindow.rootViewController = loginVC;
+    
+//    //bilibili登录界面
+//    JpsViewController *loginVC2 = [[JpsViewController alloc]init];
+//    [UIApplication sharedApplication].keyWindow.rootViewController = loginVC2;
 }
 
 

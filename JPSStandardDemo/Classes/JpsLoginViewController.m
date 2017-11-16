@@ -23,8 +23,11 @@
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:@"QQ账号"];
     [attributedString setAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} range:NSMakeRange(0, 4)];
     self.userNameField.attributedPlaceholder = attributedString;
-    
     [self.passwordField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    
+    
+    //验证字典里的打印是否为unicode
+    [self unicodeTest];
 }
 
 
@@ -45,6 +48,20 @@
     [self touchIDAuthentication];
 }
 
+//重写打印方法后，测试字典、数组里打印的是否还为unicode
+- (void)unicodeTest
+{
+    NSArray *tempArr = @[@"中文", @"中文"];
+    NSLog(@"%@", tempArr);
+    
+    NSDictionary *tempDic = @{@"啊":@"嗷嗷"};
+    
+    NSDictionary *dictionary = @{@"哈哈":@"秘密", @"咪咪":@"秘密", @"字典":tempDic, @"数组":tempArr};
+    NSLog(@"%@", dictionary);
+    
+    NSArray *array = @[@"哈哈",@"哈哈",dictionary];
+    NSLog(@"%@",array);
+}
 
 
 #pragma mark - ---------- 指纹登录 -----------
