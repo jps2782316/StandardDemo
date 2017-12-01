@@ -1,0 +1,11 @@
+
+
+************************ 这里用来做笔记、心得 ************************
+
+记录测试账号等等。。。
+
+
+1. 导航栏(44)、状态栏(20、44)高度作为宏，方便适配iPhone X，最下面34的区域最好设置一个tableView的footerView，不要直接留出34（为了更好的利用屏幕高度）
+   设置了navigationController?.navigationBar.prefersLargeTitles = true这个属性时，Navigation bar height是经加上了StatusBar的高度)140，否则，Navigation bar height是(已经加上了StatusBar的高度)88
+
+2. 占位图可以封装到tableView的基类里，有数据隐藏，没数据展示。  对于一些非tableView的固定控件，先加到一个view上，等有数据了再把view显示出来，就能避免网络慢的时候界面显示label字样控件。

@@ -15,6 +15,8 @@
 @property(nonatomic,strong)TabbarController *rightVC;
 @property(nonatomic,strong)JpsLeftViewController *leftVC;
 
+@property(nonatomic,strong)UIView *maskView;  //!<右边控制器上面的遮罩
+
 @end
 
 @implementation JpsManagerViewController
@@ -44,6 +46,11 @@
         [self.view addSubview:self.rightVC.view];
         [self.rightVC didMoveToParentViewController:self];
         
+        
+        //遮罩
+        [self.rightVC.view addSubview:self.maskView];
+        [self.rightVC.view bringSubviewToFront:self.maskView];
+        
     }
     return self;
 }
@@ -54,24 +61,26 @@
     [super viewDidLoad];
     
     
-    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(rightSwipe:)];
+    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(showLeft)];
     rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:rightSwipe];
+    [self.rightVC.view addGestureRecognizer:rightSwipe];
     
-    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(leftSwipe:)];
+    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(showRight)];
     leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:leftSwipe];
+    [self.rightVC.view addGestureRecognizer:leftSwipe];
     
 }
 
 
-#pragma mark - ---------- 手势 -----------
+#pragma mark - ------------- Transform -------------
 
-- (void)rightSwipe:(UIGestureRecognizer *)swipe
+- (void)showLeft
 {
     //    if (self.rightVC.view.frame.origin.x > 0) {
     //        return;
     //    }
+    self.leftIsShow = YES;
+    self.maskView.hidden = NO;
     
     [UIView animateWithDuration:0.3 animations:^{
         CGAffineTransform transform0 = CGAffineTransformMakeScale(0.7, 0.7); //缩放变换
@@ -92,8 +101,11 @@
 }
 
 
-- (void)leftSwipe:(UISwipeGestureRecognizer *)swipe
+- (void)showRight
 {
+    self.leftIsShow = NO;
+    self.maskView.hidden = YES;
+    
     [UIView animateWithDuration:0.3 animations:^{
         //CGAffineTransform transform0 = CGAffineTransformMakeScale(1.0, 1.0); //缩放变换
         CGAffineTransform transform0 = CGAffineTransformIdentity;
@@ -111,7 +123,32 @@
 }
 
 
+#pragma mark - ------------- GestrueRecognizer -------------
 
+- (void)showRightVC:(UITapGestureRecognizer *)tap
+{
+    if (self.leftIsShow) {
+        [self showRight];
+    }
+}
+
+
+#pragma mark - ------------- lazy -------------
+
+- (UIView *)maskView
+{
+    if (!_maskView) {
+        _maskView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        _maskView.hidden = YES;
+        _maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showRightVC:)];
+        [self.view addGestureRecognizer:tap];
+        [_maskView addGestureRecognizer:tap];
+        
+    }
+    return _maskView;
+}
 
 
 

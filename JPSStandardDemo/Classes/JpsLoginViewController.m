@@ -8,6 +8,7 @@
 
 #import "JpsLoginViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>//指纹登录
+#import "JpsDeprecatedClass.h"
 
 @interface JpsLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
@@ -26,8 +27,18 @@
     [self.passwordField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     
     
-    //验证字典里的打印是否为unicode
+    //------------------ 测试其他功能 ---------------------
+    
+    //1. 验证字典里的打印是否为unicode
     [self unicodeTest];
+    
+    //2. 弃用方法的提示语
+    JpsDeprecatedClass *deprecated = [[JpsDeprecatedClass alloc]init];
+    [deprecated deprecated_function];
+    UIColor *color = deprecated.color;
+    
+    
+    //---------------------------------------------------
 }
 
 
@@ -35,6 +46,11 @@
 #pragma mark - ---------- Action -----------
 
 - (IBAction)loginClick:(id)sender {
+    
+#warning this is warning message.......
+    
+    //TODO: this is waiting to do......
+    
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil userInfo:nil];
 }
@@ -47,6 +63,9 @@
 {
     [self touchIDAuthentication];
 }
+
+
+#pragma mark - ------------- 测试其他功能 -------------
 
 //重写打印方法后，测试字典、数组里打印的是否还为unicode
 - (void)unicodeTest
@@ -62,6 +81,11 @@
     NSArray *array = @[@"哈哈",@"哈哈",dictionary];
     NSLog(@"%@",array);
 }
+
+
+
+
+
 
 
 #pragma mark - ---------- 指纹登录 -----------

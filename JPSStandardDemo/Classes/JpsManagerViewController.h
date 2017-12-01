@@ -10,6 +10,12 @@
 
 @interface JpsManagerViewController : UIViewController
 
+@property(nonatomic,assign)BOOL leftIsShow;  //!<是否正处于测滑的状态
+
 - (instancetype)initWithLeftVC:(id)leftVC rightVC:(id)rightVC;
+
+- (void)showLeft;
+
+- (void)showRight;
 
 @end

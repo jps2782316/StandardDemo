@@ -46,9 +46,14 @@
     [self collectionView];
     
     
-    //self.navigationController.navigationBar.barTintColor = [[UIColor blackColor]colorWithAlphaComponent:0.1];
     
     
+//    //设置大标题
+//    if (@available(iOS 11.0, *)) {
+//        self.navigationController.navigationBar.prefersLargeTitles = YES;
+//    } else {
+//        // Fallback on earlier versions
+//    }
     
     //====================== Utility 方法测试验证 =================
     NSString *str1 = [JpsUtility dateStrWithYear:0 month:-1 week:0 day:1 date:[NSDate date]];

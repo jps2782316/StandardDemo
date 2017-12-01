@@ -27,7 +27,12 @@
 }
 
 
-#pragma mark - ------------- 初始化导航栏的各项属性 -------------
+
+#pragma mark - ------------- LifeCircle -------------
+
+
+
+#pragma mark - ------------- UI -------------
 
 - (void)initNavigationBar
 {
@@ -51,10 +56,10 @@
     self.navigationItem.rightBarButtonItem = rightItem;
 }
 
+#pragma mark - ------------- Networking -------------
 
 
-
-#pragma mark - ---------- 事件处理 -----------
+#pragma mark - ---------- Action -----------
 
 - (void)backClick:(UIButton *)sender
 {
@@ -66,9 +71,17 @@
     
 }
 
+#pragma mark - ------------- Notification -------------
 
 
-#pragma mark - ------------- 懒加载 -------------
+#pragma mark - ------------- setter -------------
+
+
+#pragma mark - ------------- Others -------------
+
+
+
+#pragma mark - ------------- Lazy -------------
 
 //1. 网络请求单利
 - (NetworkingManager *)netManager

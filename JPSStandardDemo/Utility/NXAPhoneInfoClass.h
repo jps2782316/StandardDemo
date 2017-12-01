@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+/**
+ 这是获取手机相关信息的类
+ */
 @interface NXAPhoneInfoClass : NSObject
 
 

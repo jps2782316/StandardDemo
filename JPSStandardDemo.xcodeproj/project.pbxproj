@@ -322,6 +322,11 @@
 		A09E30F21E8E3EDE006C0D3E /* 19.png in Resources */ = {isa = PBXBuildFile; fileRef = A09E30EC1E8E3EDE006C0D3E /* 19.png */; };
 		A09E30F31E8E3EDE006C0D3E /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = A09E30ED1E8E3EDE006C0D3E /* 20.png */; };
 		A09E30F61E8E56F9006C0D3E /* MianDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09E30F51E8E56F9006C0D3E /* MianDetailViewController.m */; };
+		A0BACF2C1FC4210800BE20E6 /* File in Resources */ = {isa = PBXBuildFile; fileRef = A0BACF2B1FC4210800BE20E6 /* File */; };
+		A0BACF3A1FC657CC00BE20E6 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BACF351FC657CC00BE20E6 /* NSArray+Log.m */; };
+		A0BACF3B1FC657CC00BE20E6 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BACF371FC657CC00BE20E6 /* NSDictionary+Log.m */; };
+		A0BACF3C1FC657CC00BE20E6 /* NSString+unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BACF391FC657CC00BE20E6 /* NSString+unicode.m */; };
+		A0BACF3F1FC662DF00BE20E6 /* JpsDeprecatedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BACF3E1FC662DF00BE20E6 /* JpsDeprecatedClass.m */; };
 		A0FF02941E8F78DF0023A412 /* JPSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FF02931E8F78DF0023A412 /* JPSPickerView.m */; };
 		A0FF02971E8F7D2A0023A412 /* JpsDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FF02961E8F7D2A0023A412 /* JpsDatePickerView.m */; };
 		A0FF02A01E95E6A00023A412 /* JpsUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FF029F1E95E6A00023A412 /* JpsUtility.m */; };
@@ -800,6 +805,15 @@
 		A09E30ED1E8E3EDE006C0D3E /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20.png; sourceTree = "<group>"; };
 		A09E30F41E8E56F9006C0D3E /* MianDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MianDetailViewController.h; sourceTree = "<group>"; };
 		A09E30F51E8E56F9006C0D3E /* MianDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MianDetailViewController.m; sourceTree = "<group>"; };
+		A0BACF2B1FC4210800BE20E6 /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		A0BACF341FC657CC00BE20E6 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		A0BACF351FC657CC00BE20E6 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		A0BACF361FC657CC00BE20E6 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
+		A0BACF371FC657CC00BE20E6 /* NSDictionary+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
+		A0BACF381FC657CC00BE20E6 /* NSString+unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+unicode.h"; sourceTree = "<group>"; };
+		A0BACF391FC657CC00BE20E6 /* NSString+unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+unicode.m"; sourceTree = "<group>"; };
+		A0BACF3D1FC662DF00BE20E6 /* JpsDeprecatedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JpsDeprecatedClass.h; sourceTree = "<group>"; };
+		A0BACF3E1FC662DF00BE20E6 /* JpsDeprecatedClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JpsDeprecatedClass.m; sourceTree = "<group>"; };
 		A0FF02921E8F78DF0023A412 /* JPSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSPickerView.h; sourceTree = "<group>"; };
 		A0FF02931E8F78DF0023A412 /* JPSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSPickerView.m; sourceTree = "<group>"; };
 		A0FF02951E8F7D2A0023A412 /* JpsDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpsDatePickerView.h; sourceTree = "<group>"; };
@@ -1410,6 +1424,9 @@
 				A061032D1E8A3D7B003BC110 /* AppDelegate.m */,
 				A06103681E8A4202003BC110 /* PrefixHeader.pch */,
 				A06103691E8A421A003BC110 /* Header.h */,
+				A0BACF2B1FC4210800BE20E6 /* File */,
+				A0BACF3D1FC662DF00BE20E6 /* JpsDeprecatedClass.h */,
+				A0BACF3E1FC662DF00BE20E6 /* JpsDeprecatedClass.m */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -1503,6 +1520,7 @@
 		A06103661E8A4112003BC110 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A0BACF331FC657CC00BE20E6 /* CNLog */,
 				A034F5E91E8BA11A00BBCAB5 /* NSDictionary+Category.h */,
 				A034F5EA1E8BA11A00BBCAB5 /* NSDictionary+Category.m */,
 				809F74761EFDEA030055D6E5 /* NSArray+Category.h */,
@@ -1821,6 +1839,19 @@
 			name = QQ;
 			sourceTree = "<group>";
 		};
+		A0BACF331FC657CC00BE20E6 /* CNLog */ = {
+			isa = PBXGroup;
+			children = (
+				A0BACF341FC657CC00BE20E6 /* NSArray+Log.h */,
+				A0BACF351FC657CC00BE20E6 /* NSArray+Log.m */,
+				A0BACF361FC657CC00BE20E6 /* NSDictionary+Log.h */,
+				A0BACF371FC657CC00BE20E6 /* NSDictionary+Log.m */,
+				A0BACF381FC657CC00BE20E6 /* NSString+unicode.h */,
+				A0BACF391FC657CC00BE20E6 /* NSString+unicode.m */,
+			);
+			path = CNLog;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1954,6 +1985,7 @@
 				A09E30A91E8DF2A5006C0D3E /* XQLoading00039_80x80_@1x.png in Resources */,
 				805305211F02B98A0039331E /* fx_live_room_gift_rating2_0@2x.png in Resources */,
 				805305231F02B98A0039331E /* fx_live_room_gift_rating2_11@2x.png in Resources */,
+				A0BACF2C1FC4210800BE20E6 /* File in Resources */,
 				A034F6521E8BA79200BBCAB5 /* LICENSE.txt in Resources */,
 				A06103391E8A3D7B003BC110 /* LaunchScreen.storyboard in Resources */,
 				801E73B21F5A36030021F670 /* login_backgroundImage@2x.jpg in Resources */,
@@ -2167,6 +2199,7 @@
 				A034F7071E8BA7B300BBCAB5 /* MASCompositeConstraint.m in Sources */,
 				A034F6CB1E8BA7A000BBCAB5 /* UIImageView+WebCache.m in Sources */,
 				A034F6441E8BA2D500BBCAB5 /* SBJsonWriter.m in Sources */,
+				A0BACF3A1FC657CC00BE20E6 /* NSArray+Log.m in Sources */,
 				A09E30411E8D08F2006C0D3E /* AdvertisementView.m in Sources */,
 				A034F68A1E8BA79A00BBCAB5 /* MJRefreshComponent.m in Sources */,
 				A034F6941E8BA79A00BBCAB5 /* MJRefreshNormalHeader.m in Sources */,
@@ -2174,9 +2207,11 @@
 				801E73D91F5A78190021F670 /* JpsLeftViewController.m in Sources */,
 				A034F6191E8BA2CB00BBCAB5 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				A034F6E91E8BA7AD00BBCAB5 /* JSONKeyMapper.m in Sources */,
+				A0BACF3C1FC657CC00BE20E6 /* NSString+unicode.m in Sources */,
 				A034F61E1E8BA2CB00BBCAB5 /* UIWebView+AFNetworking.m in Sources */,
 				A034F6881E8BA79A00BBCAB5 /* MJRefreshAutoFooter.m in Sources */,
 				80578C321F105A5300D0358D /* JpsPlaceholderView.m in Sources */,
+				A0BACF3B1FC657CC00BE20E6 /* NSDictionary+Log.m in Sources */,
 				A034F5E51E8B9FE500BBCAB5 /* NetworkingManager.m in Sources */,
 				A034F6CA1E8BA7A000BBCAB5 /* UIImageView+HighlightedWebCache.m in Sources */,
 				A034F6101E8BA2CB00BBCAB5 /* AFHTTPSessionManager.m in Sources */,
@@ -2211,6 +2246,7 @@
 				A034F6981E8BA79A00BBCAB5 /* NSBundle+MJRefresh.m in Sources */,
 				A034F63D1E8BA2D500BBCAB5 /* SBJsonStreamParserAdapter.m in Sources */,
 				801E73B71F5A4CA90021F670 /* JpsWelcomeViewController.m in Sources */,
+				A0BACF3F1FC662DF00BE20E6 /* JpsDeprecatedClass.m in Sources */,
 				A034F61C1E8BA2CB00BBCAB5 /* UIProgressView+AFNetworking.m in Sources */,
 				A034F6E51E8BA7AD00BBCAB5 /* JSONModelError.m in Sources */,
 				A034F7091E8BA7B300BBCAB5 /* MASConstraintMaker.m in Sources */,
