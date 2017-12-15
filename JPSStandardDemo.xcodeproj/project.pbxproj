@@ -83,6 +83,8 @@
 		80F1C8C91EFFED0B00D89F5F /* PickerView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F1C8C81EFFED0B00D89F5F /* PickerView2.m */; };
 		80F1C8CB1EFFEDDD00D89F5F /* area.xml in Resources */ = {isa = PBXBuildFile; fileRef = 80F1C8CA1EFFEDDD00D89F5F /* area.xml */; };
 		A00156CC1ED5AC4800115066 /* NXABlueToothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00156CB1ED5AC4800115066 /* NXABlueToothViewController.m */; };
+		A01A85831FD7DE2E0000745E /* JPSPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01A85821FD7DE2E0000745E /* JPSPlayerViewController.m */; };
+		A01A85861FD7E1260000745E /* JPSPlayerView2.m in Sources */ = {isa = PBXBuildFile; fileRef = A01A85851FD7E1260000745E /* JPSPlayerView2.m */; };
 		A034F5E51E8B9FE500BBCAB5 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A034F5E41E8B9FE500BBCAB5 /* NetworkingManager.m */; };
 		A034F5E81E8B9FF400BBCAB5 /* SingleDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A034F5E71E8B9FF400BBCAB5 /* SingleDataManager.m */; };
 		A034F5EB1E8BA11A00BBCAB5 /* NSDictionary+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = A034F5EA1E8BA11A00BBCAB5 /* NSDictionary+Category.m */; };
@@ -443,6 +445,10 @@
 		80F1C8CA1EFFEDDD00D89F5F /* area.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = area.xml; sourceTree = "<group>"; };
 		A00156CA1ED5AC4800115066 /* NXABlueToothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXABlueToothViewController.h; sourceTree = "<group>"; };
 		A00156CB1ED5AC4800115066 /* NXABlueToothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXABlueToothViewController.m; sourceTree = "<group>"; };
+		A01A85811FD7DE2E0000745E /* JPSPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPSPlayerViewController.h; sourceTree = "<group>"; };
+		A01A85821FD7DE2E0000745E /* JPSPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPSPlayerViewController.m; sourceTree = "<group>"; };
+		A01A85841FD7E1260000745E /* JPSPlayerView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPSPlayerView2.h; sourceTree = "<group>"; };
+		A01A85851FD7E1260000745E /* JPSPlayerView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPSPlayerView2.m; sourceTree = "<group>"; };
 		A034F5E31E8B9FE500BBCAB5 /* NetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingManager.h; sourceTree = "<group>"; };
 		A034F5E41E8B9FE500BBCAB5 /* NetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingManager.m; sourceTree = "<group>"; };
 		A034F5E61E8B9FF400BBCAB5 /* SingleDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleDataManager.h; sourceTree = "<group>"; };
@@ -948,6 +954,17 @@
 			name = "蓝牙";
 			sourceTree = "<group>";
 		};
+		A01A85801FD7DDDE0000745E /* 视频播放器2 */ = {
+			isa = PBXGroup;
+			children = (
+				A01A85811FD7DE2E0000745E /* JPSPlayerViewController.h */,
+				A01A85821FD7DE2E0000745E /* JPSPlayerViewController.m */,
+				A01A85841FD7E1260000745E /* JPSPlayerView2.h */,
+				A01A85851FD7E1260000745E /* JPSPlayerView2.m */,
+			);
+			name = "视频播放器2";
+			sourceTree = "<group>";
+		};
 		A034F5E11E8B9FC500BBCAB5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1335,7 +1352,7 @@
 			path = BaseClasses;
 			sourceTree = "<group>";
 		};
-		A05CC8551ECC4DD700A53A7B /* 视频播放器 */ = {
+		A05CC8551ECC4DD700A53A7B /* 视频播放器1 */ = {
 			isa = PBXGroup;
 			children = (
 				A03542921ECDA8120089BDC6 /* CLPlayer.bundle */,
@@ -1348,7 +1365,7 @@
 				800C83FD1F5BE7C00007C8AD /* JpsBrightnessView.h */,
 				800C83FE1F5BE7C00007C8AD /* JpsBrightnessView.m */,
 			);
-			name = "视频播放器";
+			name = "视频播放器1";
 			sourceTree = "<group>";
 		};
 		A061031D1E8A3D7B003BC110 = {
@@ -1447,6 +1464,7 @@
 		A061035E1E8A3DFF003BC110 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A0A221811FE0D3E700016324 /* video */,
 				801E73BB1F5A57F80021F670 /* 百度钱包 */,
 				A06103BF1E8A4B90003BC110 /* 下拉刷新动画 */,
 				80578C331F1063B700D0358D /* 占位图 */,
@@ -1571,8 +1589,9 @@
 		A06103701E8A48BA003BC110 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A01A85801FD7DDDE0000745E /* 视频播放器2 */,
+				A05CC8551ECC4DD700A53A7B /* 视频播放器1 */,
 				8088DBAB1F47F847009D08F1 /* 语音识别 */,
-				A05CC8551ECC4DD700A53A7B /* 视频播放器 */,
 				A00156C91ED5AC2A00115066 /* 蓝牙 */,
 				A06103751E8A494E003BC110 /* Models */,
 				A06103741E8A4940003BC110 /* Views */,
@@ -1839,6 +1858,13 @@
 			name = QQ;
 			sourceTree = "<group>";
 		};
+		A0A221811FE0D3E700016324 /* video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = video;
+			sourceTree = "<group>";
+		};
 		A0BACF331FC657CC00BE20E6 /* CNLog */ = {
 			isa = PBXGroup;
 			children = (
@@ -1914,13 +1940,13 @@
 		A061031E1E8A3D7B003BC110 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = Jps;
+				CLASSPREFIX = JPS;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = jps;
 				TargetAttributes = {
 					A06103251E8A3D7B003BC110 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YP9V896898;
+						DevelopmentTeam = KZ64JKUN8A;
 						ProvisioningStyle = Automatic;
 					};
 					A061033E1E8A3D7C003BC110 = {
@@ -2235,6 +2261,7 @@
 				A034F6431E8BA2D500BBCAB5 /* SBJsonUTF8Stream.m in Sources */,
 				A06103811E8A4A5A003BC110 /* MainViewController.m in Sources */,
 				A034F6391E8BA2D500BBCAB5 /* NSObject+SBJson.m in Sources */,
+				A01A85831FD7DE2E0000745E /* JPSPlayerViewController.m in Sources */,
 				A034F70F1E8BA7B300BBCAB5 /* View+MASAdditions.m in Sources */,
 				A034F6E41E8BA7AD00BBCAB5 /* JSONModelClassProperty.m in Sources */,
 				A034F69A1E8BA79A00BBCAB5 /* UIScrollView+MJRefresh.m in Sources */,
@@ -2290,6 +2317,7 @@
 				A034F68E1E8BA79A00BBCAB5 /* MJRefreshAutoNormalFooter.m in Sources */,
 				A034F6C71E8BA7A000BBCAB5 /* UIButton+WebCache.m in Sources */,
 				A034F6541E8BA79200BBCAB5 /* SVIndefiniteAnimatedView.m in Sources */,
+				A01A85861FD7E1260000745E /* JPSPlayerView2.m in Sources */,
 				A034F63E1E8BA2D500BBCAB5 /* SBJsonStreamParserState.m in Sources */,
 				8088DBB31F480D44009D08F1 /* SpeechViewController.m in Sources */,
 				A0FF02971E8F7D2A0023A412 /* JpsDatePickerView.m in Sources */,
@@ -2453,7 +2481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YP9V896898;
+				DEVELOPMENT_TEAM = KZ64JKUN8A;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/JPSStandardDemo/Public/PrefixHeader.pch";
@@ -2468,7 +2496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YP9V896898;
+				DEVELOPMENT_TEAM = KZ64JKUN8A;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/JPSStandardDemo/Public/PrefixHeader.pch";

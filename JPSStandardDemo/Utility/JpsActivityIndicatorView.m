@@ -34,27 +34,32 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         vi = [[JpsActivityIndicatorView alloc]init];
+   //     vi.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
     });
     return vi;
 }
 
 
 #pragma mark - ------------- 默认加载在window上 -------------
+
 + (void)startAnimation
 {
-    //JpsActivityIndicatorView *view = [[self alloc]init];
     JpsActivityIndicatorView *view = [self shareIndicator];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    view.bounds = CGRectMake(0, 0, 50, 50);
+    view.bounds = window.bounds;
     view.center = window.center;
     [window addSubview:view];
+    
+   // window.userInteractionEnabled = NO;
     
     [[view imageV] startAnimating];
 }
 
 + (void)stopAnimation
 {
-    JpsActivityIndicatorView *view = [[self alloc]init];
+    JpsActivityIndicatorView *view = [self shareIndicator];
+    
+  //  view.window.userInteractionEnabled = YES;
     
     [[view imageV] stopAnimating];
     [view removeFromSuperview];
@@ -90,7 +95,9 @@
 - (UIImageView *)imageV
 {
     if (!_imageV) {
-        _imageV = [[UIImageView alloc]initWithFrame:self.bounds];
+        _imageV = [[UIImageView alloc]initWithFrame:CGRectZero];
+        _imageV.bounds = CGRectMake(0, 0, 40, 40);
+        _imageV.center = self.center;
         _imageV.animationImages = self.images;
         [self addSubview:_imageV];
     }

@@ -15,9 +15,13 @@
 #import "NXABlueToothViewController.h"
 #import "JpsSpeechViewController.h"
 #import "SpeechViewController.h"
+#import "JPSPlayerViewController.h"
 
 
 #define kItemW Width/4.0
+
+
+//UICollectionViewDelegateFlowLayout 为 UICollectionViewDelegate 子类，实现一个就够了
 
 @interface MainViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -143,6 +147,12 @@
         [self.navigationController pushViewController:speechVC animated:YES];
         return;
     }
+    if (indexPath.row == 7) { //视频播放 (转屏时window方向也转了)
+        JPSPlayerViewController *playerVC2 = [[JPSPlayerViewController alloc]init];
+        [playerVC2 setHidesBottomBarWhenPushed:YES];
+        [self.navigationController pushViewController:playerVC2 animated:YES];
+        return;
+    }
     
     //其他一些小控件，统统放到此控制器展示
     MianDetailViewController *detailVC = [[MianDetailViewController alloc]init];
@@ -162,6 +172,23 @@
 
 
 #pragma mark - ------------- lazy -------------
+
+//- (UICollectionViewFlowLayout *)flowLayout
+//{
+//    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+//    //cell的大小
+//    layout.itemSize = CGSizeMake(kItemW, kItemW+30);
+//    //头视图大小
+//    layout.headerReferenceSize = CGSizeMake(Width, Width*0.536);
+//    CGFloat margin = (Width-3*(kItemW))/4.0; //减掉3个item后，还有四个间隙
+//    //上左下右的距离
+//    layout.sectionInset = UIEdgeInsetsMake(20, margin-10, 20, margin-10);  //(20, kItemW/2, 20, kItemW/2);
+//    //cell间的最小距离
+//    layout.minimumLineSpacing = 30;   //上下 20
+//    layout.minimumInteritemSpacing = margin;  //左右 5
+//    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+//    return layout;
+//}
 
 - (UICollectionViewFlowLayout *)flowLayout
 {

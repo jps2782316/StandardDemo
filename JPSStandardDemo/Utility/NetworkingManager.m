@@ -94,7 +94,10 @@ static NetworkingManager *manager = nil;
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     //manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
-    manager.requestSerializer.timeoutInterval = 10; //超时
+    //设置超时
+    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    manager.requestSerializer.timeoutInterval = 15.0;
+    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     
     [manager POST:url parameters:paramters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

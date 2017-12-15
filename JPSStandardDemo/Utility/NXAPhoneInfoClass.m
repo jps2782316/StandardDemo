@@ -49,6 +49,18 @@
 
 
 
+//// 状态栏(statusbar)
+//
+//CGRect StatusRect = [[UIApplication sharedApplication] statusBarFrame];
+//
+////标题栏
+//
+//CGRect NavRect = self.navigationController.navigationBar.frame;
+//然后将高度相加，便可以动态计算顶部高度。
+
+
+
+
 + (NSNumber *)getMarker
 {
     //  *1000 是精确到毫秒，不乘就是精确到秒
@@ -64,9 +76,11 @@
 
 + (CGFloat)getHeight
 {
-    CGSize deviceSize = [UIScreen mainScreen].bounds.size;
+    //CGSize deviceSize = [UIScreen mainScreen].bounds.size;
+    
+    CGRect  statuBarRec = [[UIApplication sharedApplication] statusBarFrame];
     //iPhone X
-    if (deviceSize.width == 375 && deviceSize.height == 812) {
+    if (statuBarRec.size.height > 20) {
         return 44 + 44 + 34;   //状态栏  导航栏   底部虚拟区
     }
     //其他
@@ -75,14 +89,7 @@
     }
 }
 
-//// 状态栏(statusbar)
-//
-//CGRect StatusRect = [[UIApplication sharedApplication] statusBarFrame];
-//
-////标题栏
-//
-//CGRect NavRect = self.navigationController.navigationBar.frame;
-//然后将高度相加，便可以动态计算顶部高度。
+
 
 
 
