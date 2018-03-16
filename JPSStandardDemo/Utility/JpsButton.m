@@ -31,6 +31,26 @@
 }
 
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.adjustsFontSizeToFitWidth = YES;
+    }
+    return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.adjustsFontSizeToFitWidth = YES;
+}
+
+
+
 
 //MARK: - 设置buton的文字位置
 - (CGRect)titleRectForContentRect:(CGRect)contentRect

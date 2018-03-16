@@ -33,8 +33,9 @@
 //    NSString *str1 = [[NSBundle mainBundle] pathForResource:@"haha" ofType:@"mp4"];
 //    self.playerView.localVedioUrl = str1;
     
-    NSString *str2 = @"http://baobab.cdn.wandoujia.com/14468618701471.mp4";
+    //NSString *str2 = @"http://baobab.cdn.wandoujia.com/14468618701471.mp4";
     //NSString *str2 = @"http://nesec.oss-cn-shenzhen.aliyuncs.com/nxa_app_jxjy/aqjy_25.mp4";
+    NSString *str2 = @"http://nxa-jiayitong.oss-cn-shenzhen.aliyuncs.com/nxa_mobile_jp/A1/subject1/2.1.mp4";
     self.playerView.vedioName = @"魔兽世界";
     self.playerView.vedioUrl = str2;
     self.playerView.fillMode = ResizeAspectFill;

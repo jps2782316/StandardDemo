@@ -24,4 +24,9 @@
 + (instancetype)shareManager;
 
 
+#pragma mark - ------------- 销毁单例 -------------
+
+- (void)clear;
+
+
 @end

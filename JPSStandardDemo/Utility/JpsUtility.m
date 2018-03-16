@@ -67,18 +67,26 @@
 //================================================
 #pragma mark - =========== 文字相关 ==========
 #pragma mark - ------------- 计算文字所占label的高度 -------------
-+ (CGFloat)heightForLabelWithLabel:(UILabel *)label
++ (CGFloat)heightWithString:(NSString *)string size:(CGSize)size font:(UIFont *)font
 {
     //label的最大高度为1000;
     //设置显示的最大宽高；
     //文本绘制的附加参数；
-    //3.文本字体；
     
-    NSString *str = label.text;
-    //计算结果
-    CGRect frame = [str boundingRectWithSize:CGSizeMake(WIDTH-20, 1000)
+    if (string == nil) {
+        return 0;
+    }
+    
+    if (font == nil) {
+        font = [UIFont systemFontOfSize:17];
+    }
+    
+    
+    
+    //计算结果  CGSizeMake(WIDTH-20, 1000)
+    CGRect frame = [string boundingRectWithSize:size
                                      options:NSStringDrawingUsesLineFragmentOrigin
-                                  attributes:@{NSFontAttributeName:label.font} context:nil];
+                                  attributes:@{NSFontAttributeName:font} context:nil];
     DLog(@"%@",NSStringFromCGRect(frame));
     return frame.size.height;
 }
@@ -229,6 +237,35 @@
     return date;
 }
 
+
+/**
+ 从现在开始到今天结束，还剩多少秒
+ */
+- (double)todayEndSeconds
+{
+    NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];;
+    calendar.timeZone = [NSTimeZone localTimeZone];
+    NSDate *startDate = [calendar startOfDayForDate:[NSDate date]];
+    
+    //结束时间
+    NSDateComponents *components = [[NSDateComponents alloc]init];
+    components.day = 0;
+    components.hour = -1;
+    components.minute = -1;
+    components.second = -1;
+    NSDate *endDate = [calendar dateByAddingComponents:components toDate:startDate options:NSCalendarWrapComponents];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyMMddHHmmss"];
+    //时间字符串
+    NSString *dateTime = [formatter stringFromDate:endDate];
+    
+    
+    //计算出从现在开始到今天23:59:59时的时间戳
+    NSTimeInterval interval = [endDate timeIntervalSinceNow];
+    
+    return interval;
+}
 
 
 
@@ -415,49 +452,7 @@
 
 
 
-#pragma mark - ------------- 文字操作（不常用） -------------
-
-//设置文字行间距
-+ (void)changeLineSpaceForLabel:(UILabel *)label WithSpace:(float)space
-{
-    
-    NSString *labelText = label.text;
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:labelText];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:space];
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [labelText length])];
-    label.attributedText = attributedString;
-    //    [label sizeToFit];
-    
-}
-
-//改变字间距
-+ (void)changeWordSpaceForLabel:(UILabel *)label WithSpace:(float)space
-{
-    
-    NSString *labelText = label.text;
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:labelText attributes:@{NSKernAttributeName:@(space)}];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [labelText length])];
-    label.attributedText = attributedString;
-    // [label sizeToFit];
-    
-}
-
-
-//改变行间距和字间距
-+ (void)changeSpaceForLabel:(UILabel *)label withLineSpace:(float)lineSpace WordSpace:(float)wordSpace
-{
-    
-    NSString *labelText = label.text;
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:labelText attributes:@{NSKernAttributeName:@(wordSpace)}];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:lineSpace];
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [labelText length])];
-    label.attributedText = attributedString;
-    // [label sizeToFit];
-    
-}
+#
 
 
 

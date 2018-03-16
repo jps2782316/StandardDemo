@@ -214,10 +214,16 @@ typedef NS_ENUM(NSInteger, JPSPlayerState) {
 //    AVURLAsset *urlAsset = [AVURLAsset assetWithURL:self.url];
 //    // 初始化playerItem
 //    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:urlAsset];
-    
+    //添加防盗链
+    NSMutableDictionary *headers = [[NSMutableDictionary alloc]init];
+    [headers setObject:@"http://nxa-jiayitong.oss-cn-shenzhen.aliyuncs.com*" forKey:@"Referer"];
+    AVAsset *urlAsset = [AVURLAsset URLAssetWithURL:self.url options:@{@"AVURLAssetHTTPHeaderFieldsKey":headers}];
+    // 初始化playerItem
+    self.playerItem = [AVPlayerItem playerItemWithAsset:urlAsset];
     
     //远程
-    self.playerItem = [[AVPlayerItem alloc]initWithURL:self.url];
+    //self.playerItem = [[AVPlayerItem alloc]initWithURL:self.url];
+    
     //1. 构建播放器
     self.player = [[AVPlayer alloc]initWithPlayerItem:self.playerItem];
     //2. 构建播放显示层

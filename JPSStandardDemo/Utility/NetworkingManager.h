@@ -32,6 +32,14 @@ typedef void(^Failure)(NSError *error);
 +(NetworkingManager *) shareManager;
 
 
+
+
+/**
+ 获取网络类型
+ */
++ (NSString *)networkingStatus;
+
+
 - (void)getDataWithUrl:(NSString *)url parameters:(NSDictionary *)paramters success:(Success)success failure:(Failure)failure;
 
 

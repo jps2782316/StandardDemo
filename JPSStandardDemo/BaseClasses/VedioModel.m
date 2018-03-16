@@ -120,7 +120,7 @@
     return nil;
 }
 
-//和上一个方法一样，只不过是设值
+//和上一个方法一样，只不过是设值  网络请求里有，而模型里没有的字段
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
 //    //找到和属性不一致名字的key，然后赋值给self的属性

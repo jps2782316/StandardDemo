@@ -54,6 +54,7 @@ static NetworkingManager *manager = nil;
 }
 
 
+#pragma mark - ------------- 关于请求头的一些设置（重要） -------------
 
 //+(AFHTTPSessionManager *)manager
 //{
@@ -71,6 +72,28 @@ static NetworkingManager *manager = nil;
 //    // 个人建议还是自己解析的比较好，有时接口返回的数据不合格会报3840错误，大致是AFN无法解析返回来的数据
 //    return manager;
 //}
+
+/*
+ NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+ 
+ manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
+ 
+ //序列化请求 必须添加此行
+ manager.requestSerializer = [AFJSONRequestSerializer serializer];
+ 
+ [manager.requestSerializer setValue:@"application/json;" forHTTPHeaderField:@"Accept"];
+ [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+ 
+ //设置超时
+ [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+ manager.requestSerializer.timeoutInterval = 10.f;
+ [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+ 
+ //序列化请求响应 必须添加此行 直接转化为json
+ manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
+ */
+
+//-----------------------------------------------------------------
 
 //http://www.jianshu.com/p/ab246881efa9 iOS9之后AFNetWorking的使用(详细)
 
@@ -171,7 +194,13 @@ static NetworkingManager *manager = nil;
 
 
 
-
+/**
+ 获取网络类型
+ */
++ (NSString *)networkingStatus
+{
+    return nil;
+}
 
 
 

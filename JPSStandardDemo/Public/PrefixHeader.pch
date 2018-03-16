@@ -11,6 +11,26 @@
 
 
 
+//常用头文件
+#import "NetworkingManager.h"
+#import "SingleDataManager.h"
+#import "JpsUtility.h"
+
+#import "NSDictionary+Category.h"
+#import "NSArray+Category.h"
+
+#import "Masonry.h"
+
+
+//网络请求相关
+#define kBaseUrl @"http://192.168.50.130:10080"
+#define kClientType @"iOS"
+#define kZoneId @"0"
+#define kUUID [NXAPhoneInfoClass UUIDString]
+
+
+
+
 //1.
 #ifdef DEBUG
 #define NSLog(...) NSLog(__VA_ARGS__)
@@ -55,9 +75,11 @@
 #define Width [UIScreen mainScreen].bounds.size.width
 #define Height [UIScreen mainScreen].bounds.size.height
 
+//适配布局相关
 #define kNavi_height self.navigationController.navigationBar.frame.size.height
 #define kStatuBar_height [[UIApplication sharedApplication] statusBarFrame].size.height
 #define kTopHeight (kNavi_height + kStatuBar_height)
+//#define kTopHeight [UIApplication sharedApplication].keyWindow.safeAreaInsets.top
 #define kBottomHeight (kStatuBar_height>20?34:0)  //iPhoneX 底部34像素留白
 
 #define kScale (NXAWidth/375.0)
@@ -70,7 +92,9 @@
 #define ThemeColor [UIColor colorWithRed:112/255.0 green:175/255.0 blue:218/255.0 alpha:1.0]
 #define ThemColor2 RGBA(250, 250, 250, 1)
 #define LolitaColor [UIColor colorWithRed:254/255.0 green:82/255.0 blue:156/255.0 alpha:1]
-#define WeixinColor RGBA(239, 239, 244, 1)
+#define WeixinColor RGBA(239, 239, 244, 1) //微信背景色
+
+
 
 //判断字符串是否为空
 #define IFISNIL(v)                                 (v = (v != nil) ? v : @"")
@@ -83,21 +107,7 @@
 
 
 
-//导入常用头文件
-#import "NetworkingManager.h"
-#import "SingleDataManager.h"
-#import "JpsUtility.h"
 
-#import "NSDictionary+Category.h"
-#import "NSArray+Category.h"
-
-#import "SBJson.h"
-
-
-
-
-//第三方库
-#import "Masonry.h"
 
 
 

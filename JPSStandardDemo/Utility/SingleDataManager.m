@@ -11,11 +11,15 @@
 @implementation SingleDataManager
 
 
+static SingleDataManager *dataManager = nil;
+static dispatch_once_t onceToken;
+
+
 + (instancetype)shareManager
 {
-    static SingleDataManager *dataManager = nil;
+//    static SingleDataManager *dataManager = nil;
+//    static dispatch_once_t onceToken;
     
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         dataManager = [[SingleDataManager alloc]init];
     });
@@ -24,7 +28,12 @@
 
 
 
-
+//重置之后，单例就会重新初始化
+- (void)clear
+{
+    dataManager = nil;
+    onceToken = 0;
+}
 
 
 @end

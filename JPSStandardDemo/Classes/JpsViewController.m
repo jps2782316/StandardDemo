@@ -96,6 +96,43 @@
 
 #pragma mark - ------------- networking -------------
 
+
+/**
+ 用户登录
+
+ @param userName 用户名
+ @param password 密码
+ */
+- (void)loginWithUserName:(NSString *)userName password:(NSString *)password
+{
+    /*
+    NSLog(@"用户登录...");
+    if ([json[@"status"] isEqualToString:@"success"]) {
+        //登录成功
+        NSDictionary *userInfoDictionary = json[@"object"];
+        NXAUserModel *model = [NXAUserModel modelWithDictionary:userInfoDictionary];
+        //1. 存储用户信息
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:model];
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"UserModel"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        //2. 存储账号密码
+        [[NSUserDefaults standardUserDefaults] setObject:userName forKey:@"UserName"];
+        [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"Password"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        //3. 保存登录状态
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoginStatus"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        //4. 更改根控制器
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginSuccess" object:nil];
+        
+    }else{
+        [NXAPublicClass showMessage:json[@"customError"]];
+    }
+     */
+    
+}
+
+
 /**
  获取城市以及地市服务地址列表(访问中心)(GetDataInfo)
  */
@@ -131,6 +168,9 @@
         DLog(@"%@",error.localizedDescription);
     }];
 }
+
+
+
 
 #pragma mark - ------------- json转字典 -------------
 

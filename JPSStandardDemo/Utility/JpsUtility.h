@@ -21,10 +21,12 @@
 
 /**
  计算文字所占label的高度
- @param label 承载文字的label
+ @param string 需要计算的文字
+  @param size 控件最大的宽高
+  @param font 字体
  @return 文字所需要label能达到的高度
  */
-+ (CGFloat)heightForLabelWithLabel:(UILabel *)label;
++ (CGFloat)heightWithString:(NSString *)string size:(CGSize)size font:(UIFont *)font;
 
 /**
  获得特殊属性字体
@@ -77,6 +79,11 @@
  字符串转时间
  */
 + (NSDate *)dateFromString:(NSString *)dateString dateFormat:(NSString *)format;
+
+/**
+ 从现在开始到今天结束，还剩多少秒
+ */
+- (double)todayEndSeconds;
 
 
 
@@ -140,6 +147,10 @@
 
 
 
+#pragma mark - ------------- 接口统一化 方便统一替换 -------------
+
++ (void)show;  //显示菊花
++ (void)dismiss;  //菊花消失
 
 
 
@@ -148,15 +159,6 @@
 
 
 
-
-//设置文字行间距
-+ (void)changeLineSpaceForLabel:(UILabel *)label WithSpace:(float)space;
-
-//改变字间距
-+ (void)changeWordSpaceForLabel:(UILabel *)label WithSpace:(float)space;
-
-//改变行间距和字间距
-+ (void)changeSpaceForLabel:(UILabel *)label withLineSpace:(float)lineSpace WordSpace:(float)wordSpace;
 
 
 @end

@@ -78,7 +78,10 @@
 
 
 #pragma mark - ------------- Others -------------
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
 
 
 #pragma mark - ------------- Lazy -------------

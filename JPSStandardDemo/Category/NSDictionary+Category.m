@@ -50,12 +50,12 @@
 }
 
 
-//json字符串转字典或数组
-- (NSDictionary *) getDicString:(NSString *)string{
-    SBJsonParser *jsonParser = [[SBJsonParser alloc]init];
-    NSDictionary *dict = [jsonParser objectWithString:string];
-    return dict;
-}
+////json字符串转字典或数组
+//- (NSDictionary *) getDicString:(NSString *)string{
+//    SBJsonParser *jsonParser = [[SBJsonParser alloc]init];
+//    NSDictionary *dict = [jsonParser objectWithString:string];
+//    return dict;
+//}
 
 #pragma mark - ------------- print -------------
 

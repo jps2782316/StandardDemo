@@ -20,14 +20,44 @@
  */
 + (NSString *)getPhoneModel;
 
+/**
+ 获取电池电量
+ */
++ (CGFloat)battertLevel;
 
 /**
- 获取时间戳
+ 获取总内存大小
  */
-+ (NSNumber *)getMarker;
++ (long)totalMemorySize;
 
 
-+ (CGFloat)getHeight;
+/**
+ 获取手机屏幕分辨率
+ */
++ (NSString *)resolution;
+
+
+/**
+ 获取当前设备的ip地址
+ */
++ (NSString *)ipAddress;
+
+
+
+/**
+ 当前手机连接的WIFI名称(SSID)
+ */
++ (NSString *)wifiName;
+
+
+
+
+
+
+
+
+
+
 
 
 @end
